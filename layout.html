@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Merriweather", serif;
+            line-height: 1.33333;
+        }
+
+        body {
+            font-size: calc(16px + 8 * ((100vw - 320px) / 1600));
+            font-weight: 400;
+            letter-spacing: -.025em;
+            display: grid;
+            padding: 4vw;
+            grid-gap: 4vw;
+            border-top: .5rem solid hsl(352, 64%, 32%);
+        }
+
+        h1 {
+            font-size: calc(28px + 8 * ((100vw - 320px) / 1600));
+        }
+
+        h2 {
+            font-size: calc(20px + 8 * ((100vw - 320px) / 1600));
+            border-bottom: 2px solid #000;
+        }
+
+        h3 {
+            font-size: calc(16px + 8 * ((100vw - 320px) / 1600));
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        header {
+        }
+
+        strong {
+            position: relative;
+            z-index: 2;
+        }
+
+        strong:before {
+            content: "";
+            position: absolute;
+            left: -.125em;
+            right: -.125em;
+            bottom: 0;
+            height: .5em;
+            background: hsl(48, 96%, 80%);
+            z-index: -1;
+        }
+
+        @media (min-width: 48em) {
+            body {
+                grid-template-columns: 22vw 55vw;
+            }
+        }
+
+        /* @media (min-width: 64em) {
+            body {
+                grid-template-columns: 4fr 8fr 2fr;
+            }
+        } */
+    </style>
+
+</head>
+<body>
+    <header>
+        <picture>
+            <img src="r-v3.svg" style="margin-top: -3vw">
+        </picture>
+
+        <h1>Testheader</h1>
+
+        <h2>Testheader</h2>
+
+        <h3>Testheader</h3>
+
+        <p style="margin-top: 1vw">Sinds 2017 langzaamaan begonnen met het ontwerpen van logo&rsquo;s, puur vanuit nieuwsgierigheid en een drang naar controle over vectoren</p>
+
+        <p style="margin-top: 1vw; font-weight: 300; letter-spacing: -.025em;">Sinds 2017 langzaamaan <strong>begonnen</strong> met het ontwerpen van logo&apos;s, puur vanuit nieuwsgierigheid en een drang naar controle over vectoren</p>
+
+        <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">E-mail</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section>
+            <h2>LochemsNieuws (2018)</h2>
+            <p style="margin-top: 1vw;">Korte beschrijving van het project</p>
+            <ul style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 2vw; margin: 1vw 0 2vw;">
+                <li style="position: relative; padding-bottom: 100%; background: #f0f0f0;"><img src="" alt=""></li>
+                <li style="position: relative; padding-bottom: 100%; background: #f0f0f0;"><img src="" alt=""></li>
+                <li style="position: relative; padding-bottom: 100%; background: #f0f0f0;"><img src="" alt=""></li>
+            </ul>
+        </section>
+
+        <section >
+            <h2>Lumidora (2017)</h2>
+            <p style="margin-top: 1vw;">Korte beschrijving van het project</p>
+            <ul style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 2vw; margin: 1vw 0 2vw;">
+                <li style="position: relative; padding-bottom: 100%; background: #f0f0f0;"><img src="" alt=""></li>
+                <li style="position: relative; padding-bottom: 100%; background: #f0f0f0;"><img src="" alt=""></li>
+                <li style="position: relative; padding-bottom: 100%; background: #f0f0f0;"><img src="" alt=""></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
