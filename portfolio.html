@@ -43,16 +43,20 @@
             left: 0;
             width: 100%;
             min-height: 100vh;
-            display: none;
+            opacity: 0;
+            visibility: hidden;
             padding: 4rem 0;
+            transition: opacity .3s;
         }
 
         section:not([id]) {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         section:target {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
