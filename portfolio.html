@@ -52,21 +52,26 @@
             top: 0;
             left: 0;
             width: 100%;
-            min-height: 100vh;
-            padding: 4rem 0;
-            transition: opacity 1s;
-        }
-
-        section:not([id="home"]) {
             opacity: 0;
             visibility: hidden;
+            height: 100vh;
+            overflow: hidden;
+            transition: opacity .3s, visibility .3s;
+        }
+
+        section > div {
+            overflow-y: auto;
+            padding: 4rem 1rem;
         }
 
         section:target,
         section[id="home"]{
             opacity: 1;
             visibility: visible;
-            transition: opacity 1s;
+        }
+
+        section * + * {
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -90,18 +95,28 @@
         </section>
 
         <section id="first" style="background: #fcc;">
-            <p><a href="#home">&lt; terug</a>
-            <p>FIRST!</p>
+            <div>
+                <p><a href="#home">&lt; terug</a>
+                <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+
+                <p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.</p>
+
+                <p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss.</p>
+            </div>
         </section>
 
         <section id="second" style="background: #cfc;">
-            <p><a href="#home">&lt; terug</a>
-            <p>SECOND!</p>
+            <div>
+                <p><a href="#home">&lt; terug</a>
+                <p>SECOND!</p>
+            </div>
         </section>
 
         <section id="third" style="background: #ccf;">
-            <p><a href="#home">&lt; terug</a>
-            <p>THIRD!</p>
+            <div>
+                <p><a href="#home">&lt; terug</a>
+                <p>THIRD!</p>
+            </div>
         </section>
     </main>
 
