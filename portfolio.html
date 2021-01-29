@@ -43,32 +43,32 @@
             left: 0;
             width: 100%;
             min-height: 100vh;
+            padding: 4rem 0;
+            transition: opacity 1s;
+        }
+
+        section:not([id="home"]) {
             opacity: 0;
             visibility: hidden;
-            padding: 4rem 0;
-            transition: opacity .3s;
         }
 
-        section:not([id]) {
+        section:target,
+        section[id="home"]{
             opacity: 1;
             visibility: visible;
-        }
-
-        section:target {
-            opacity: 1;
-            visibility: visible;
+            transition: opacity 1s;
         }
     </style>
 </head>
 <body>
     <header>
         <picture>
-            <a href="/portfolio.html">Logo</a>
+            <a href="#home">Logo</a>
         </picture>
     </header>
 
     <main>
-        <section style="background: #ccc">
+        <section id="home" style="background: #ccc">
             <h1>Home</h1>
 
             <ul>
@@ -80,17 +80,17 @@
         </section>
 
         <section id="first" style="background: #fcc;">
-            <p><a href="/portfolio.html">&lt; terug</a>
+            <p><a href="#home">&lt; terug</a>
             <p>FIRST!</p>
         </section>
 
         <section id="second" style="background: #cfc;">
-            <p><a href="/portfolio.html">&lt; terug</a>
+            <p><a href="#home">&lt; terug</a>
             <p>SECOND!</p>
         </section>
 
         <section id="third" style="background: #ccf;">
-            <p><a href="/portfolio.html">&lt; terug</a>
+            <p><a href="#home">&lt; terug</a>
             <p>THIRD!</p>
         </section>
     </main>
