@@ -8,6 +8,7 @@
 
     <style>
         * {
+            position: relative;
             box-sizing: border-box;
             padding: 0;
             margin: 0;
@@ -15,10 +16,36 @@
 
         body {
             font-family: sans-serif;
+            font-size: 100%;
+            width: 100%;
+        }
+
+        header,
+        footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 3rem;
+            background: #fff;
+            z-index: 2;
+        }
+
+        header {
+            top: 0;
+        }
+
+        footer {
+            bottom: 0;
         }
 
         section {
+            position: absolute;
+            top: 0;
+            left: 0;
             display: none;
+            width: 100vw;
+            height: 100vw;
+            padding: 4rem 0;
         }
 
         section:not([id]) {
@@ -38,13 +65,13 @@
     </header>
 
     <main>
-        <section>
+        <section style="background: #ccc">
             <h1>Home</h1>
 
             <ul>
                 <li><a href="#first">First</li>
                 <li><a href="#second">Second</a></li>
-                <li><a href="#third">Third</li>
+                <li><a href="#third">Third</a></li>
             </ul>
 
         </section>
