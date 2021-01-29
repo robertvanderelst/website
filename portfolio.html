@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio test</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        section {
+            display: none;
+        }
+
+        section:not([id]) {
+            display: block;
+        }
+
+        section:target {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <picture>
+            <a href="/">Logo</a>
+        </picture>
+    </header>
+
+    <main>
+        <section>
+            <h1>Home</h1>
+
+            <ul>
+                <li><a href="#first">First</li>
+                <li><a href="#second">Second</a></li>
+                <li><a href="#third">Third</li>
+            </ul>
+
+        </section>
+
+        <section id="first" style="background: #fcc;">
+            <p>FIRST!</p>
+        </section>
+
+        <section id="second" style="background: #cfc;">
+            <p>SECOND!</p>
+        </section>
+
+        <section id="third" style="background: #ccf;">
+            <p>THIRD!</p>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li>T</li>
+                <li>E</li>
+                <li>CV</li>
+                <li>?</li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
