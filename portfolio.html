@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio test</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">
     <style>
         * {
             position: relative;
@@ -65,7 +66,7 @@
         }
 
         section > div {
-            padding: 4rem 1rem;
+            padding: 5rem 1rem 4rem;
         }
 
         section:target,
@@ -74,13 +75,41 @@
             visibility: visible;
         }
 
-        section * + * {
-            margin-top: 1rem;
-        }
-
         img {
             display: block;
             width: 100%;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #home ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        #home li {
+            margin-right: .5rem;
+            align-self: flex-start;
+        }
+
+        #home li:nth-child(n+2):before {
+            content: " / ";
+            color: #fff;
+            font-family: "Merriweather", Georgia, serif;
+            font-weight: 300;
+            font-size: 2em;
+        }
+
+        #home a {
+            color: #fff;
+            line-height: 1;
+            font-family: "Merriweather", Georgia, serif;
+            font-weight: 300;
+            font-size: 2em;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -92,12 +121,10 @@
     </header>
 
     <main>
-        <section id="home" style="background: #ccc">
+        <section id="home" style="background: #008080">
             <div>
-                <h1>Home</h1>
-
                 <ul>
-                    <li><a href="#first">First</li>
+                    <li><a href="#first">First<span style="font-size: .8rem; text-align: right; display: block; line-height: 1;">Logo</span></a></li>
                     <li><a href="#second">Second</a></li>
                     <li><a href="#third">Third</a></li>
                 </ul>
