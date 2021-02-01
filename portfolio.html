@@ -84,15 +84,9 @@
             list-style: none;
         }
 
-        #home ul {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-
         #home li {
+            display: inline;
             margin-right: .5rem;
-            align-self: flex-start;
         }
 
         #home li:nth-child(n+2):before {
@@ -110,6 +104,11 @@
             font-weight: 300;
             font-size: 2em;
             text-decoration: none;
+            word-break:break-all;
+        }
+
+        #home a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -124,9 +123,9 @@
         <section id="home" style="background: #008080">
             <div>
                 <ul>
-                    <li><a href="#first">First<span style="font-size: .8rem; text-align: right; display: block; line-height: 1;">Logo</span></a></li>
-                    <li><a href="#second">Second</a></li>
-                    <li><a href="#third">Third</a></li>
+                    <li><a href="#first">Rietveld Licht</a></li>
+                    <li><a href="#second">Lochems Nieuws</a></li>
+                    <li><a href="#third">Lumidora</a></li>
                 </ul>
             </div>
         </section>
@@ -152,7 +151,7 @@
         <section id="third" style="background: #ccf;">
             <div>
                 <p><a href="#home">&lt; terug</a>
-                <p>THIRD!</p>
+                <p>Lumidora</p>
             </div>
         </section>
     </main>
