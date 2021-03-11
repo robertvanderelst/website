@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JouwWebHeld - Factuur</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: "Montserrat", Arial, sans-serif;
+            height: 100%;
+            padding: 2em;
+        }
+
+        header {
+            flex: 0 0 auto;
+        }
+
+        main {
+            flex: 1 1 100%;
+        }
+
+        footer {
+            flex: 0 0 auto;
+        }
+
+        input {
+            font-family: "Montserrat", Arial, sans-serif;
+            font-size: 100%;
+            padding: .25em;
+            border: 1px solid #ccc;
+        }
+
+        .jouwwebheld-info {
+            text-align: right;
+        }
+
+        .client-info {
+            margin-top: 2em;
+        }
+
+        .client-info > * + * {
+            margin-top: .5em;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            box-shadow: 0 1px 1px rgb(0 0 0 / 24%), 0 3px 3px rgb(0 0 0 / 20%), 0 6px 6px rgb(0 0 0 / 16%), 0 12px 12px rgb(0 0 0 / 12%);
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        thead th + th,
+        tbody th + th,
+        thead td + td,
+        tbody td + td {
+            border-left: 1px solid #ccc;
+        }
+
+        th span {
+            display: block;
+            font-size: .8em;
+            font-weight: normal;
+        }
+
+        th,
+        td {
+            padding: .25em;
+        }
+
+        tfoot td {
+            text-align: right;
+        }
+
+        @media print {
+            input {
+                border: none;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+            }
+
+            .client-info > * + * {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="jouwwebheld-info">
+                <div style="display: inline-block;">
+                    <picture>
+                        Logo
+                    </picture>
+
+                    <table>
+                        <tr>
+                            <th>E-mail</th>
+                            <td>info@jouwwebheld.nl</td>
+                        </tr>
+                        <tr>
+                            <th>IBAN</th>
+                            <td>NL44 ASNB 0781 1508 76</td>
+                        </tr>
+
+                        <tr>
+                            <th>BIC</th>
+                            <td>ASNBNL21</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="client-info u-lobowl">
+                <div>
+                    <input type="text" style="font-weight: bold;" value="Wereldwinkel Lochem">
+                </div>
+
+                <div>
+                    T.a.v. <input type="text" value="D. Witjes">
+                </div>
+
+                <div>
+                    <input type="text" value="Walderstraat 17">
+                </div>
+
+                <div>
+                    <input type="text" value="7241BH Lochem">
+                </div>
+            </div>
+        </header>
+
+        <main style="margin-top: 2em;">
+            <div>
+                <h1>Factuur: <span><span data-usedate="todaycondensed"></span>/<input type="text" style="width:4em; font-weight: bold;"></span></h1>
+                <p>Factuurdatum: <strong data-usedate="today"></strong><Br>Vervaldatum: <strong data-usedate="thirtydays"></strong></p>
+                <p>Betreft: <input type="text" style="width: 75%"></p>
+            </div>
+
+            <div style="margin-top: 2em;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Aantal uren</th>
+                            <th scope="col" style="width: 100%;">Beschrijving</th>
+                            <th scope="col">Bedrag <span>excl. BTW</span></th>
+                            <th scope="col">Bedrag <span>incl. BTW</span></th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="tasklist">
+                        <tr class="task">
+                            <td><input type="number" style="width:3em;" class="taskhours"></td>
+                            <td><input type="text" style="width: 100%"></td>
+                            <td style="white-space: nowrap;"><span class="taskprice-notax"></span></td>
+                            <td style="white-space: nowrap;"><span class="taskprice-tax"></span></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Totaalbedrag excl. BTW</td>
+                            <td class="totalprice-notax"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3">BTW hoog (21,0%)</td>
+                            <td class="total-tax"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3"><strong>Totaalbedrag incl. BTW</strong></td>
+                            <td class="totalprice-tax"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <button class="addtask">+</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Gelieve dit bedrag van <strong class="totalprice-tax"></strong> over te maken voor <strong data-usedate="thirtydays"></strong> op rekeningnummer: NL44 ASNB 0781 1508 76 t.n.v. R. van der Elst o.v.v. <input type="text">.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            function QS(el) {
+                return document.querySelector(el);
+            }
+
+            function QSA(el) {
+                return document.querySelectorAll(el);
+            }
+
+            const rate = '45';
+            const tax = 1.21;
+
+            // Set dates
+
+            const today = new Intl.DateTimeFormat('nl-NL', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date());
+
+            const todaycondensed = today.split('-').reverse().join('');
+
+            const thirtydays = new Date();
+            thirtydays.setDate(thirtydays.getDate() + 30);
+
+            const paymentdate = new Intl.DateTimeFormat('nl-NL', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(thirtydays);
+
+            [].forEach.call(QSA('[data-usedate]'), function (anchor, i) {
+                switch (anchor.dataset.usedate) {
+                    case "today":
+                        anchor.innerHTML = today;
+                        break;
+
+                    case "todaycondensed":
+                        anchor.innerHTML = todaycondensed;
+                        break;
+
+                    case "thirtydays":
+                        anchor.innerHTML = paymentdate;
+                        break;
+                }
+            });
+
+            // Tasks
+
+            document.documentElement.addEventListener('input', function (e) {
+                let target = e.target;
+
+                const formatter = new Intl.NumberFormat('nl-NL', {
+                  style: 'currency',
+                  currency: 'EUR',
+                });
+
+                if (target.classList.contains('taskhours')) {
+                    target.closest('tr').querySelector('.taskprice-notax').innerHTML = formatter.format(e.target.value * (rate / tax));
+                    target.closest('tr').querySelector('.taskprice-tax').innerHTML = formatter.format(e.target.value * rate);
+                }
+
+                // Calculate total price
+                let totalnotax = 0;
+                [].forEach.call(QSA('.taskprice-notax'), function (anchor) {
+                    var price = Number(anchor.innerHTML.replace(/[^0-9]+/g,""));
+
+                    totalnotax += price;
+                });
+
+                QS('.totalprice-notax').innerHTML = formatter.format(totalnotax / 100);
+
+                // Calculate total price
+                let totaltax = 0;
+                [].forEach.call(QSA('.taskprice-tax'), function (anchor) {
+                    var price = Number(anchor.innerHTML.replace(/[^0-9]+/g,""));
+
+                    totaltax += price;
+                });
+
+                [].forEach.call(QSA('.totalprice-tax'), function (anchor) {
+                    anchor.innerHTML = formatter.format(totaltax / 100);
+                });
+
+
+                // Calculate BTW
+                QS('.total-tax').innerHTML = formatter.format((totaltax - totalnotax) / 100);
+            });
+
+            // Add new task
+
+            QS('.addtask').addEventListener('click', function() {
+                let newtask = QS('.task').innerHTML;
+
+                QS('.tasklist').insertAdjacentHTML('beforeend', newtask);
+            });
+        }());
+    </script>
+</body>
+</html>
