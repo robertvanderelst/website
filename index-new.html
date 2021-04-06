@@ -138,13 +138,19 @@
             }
 
             .headshot {
-                background: hsl(16, 4%, 72%);
+                background: hsl(16, 4%, 96%);
                 position: absolute;
                 top: -4vw;
                 left: -4vw;
-                right: -16vw;
+                right: -4vw;
                 bottom: -4vw;
                 z-index: -1;
+            }
+
+            @media (min-width: 48em) {
+                .headshot {
+                    right: -16vw;
+                }
             }
 
             .payoff {
@@ -336,13 +342,13 @@
                     <span class="u-visually-hidden">Het CV van Robert van der Elst</span>
                 </h1>
 
-                <!-- <div class="headshot">
-                    Picture
-                </div> -->
+                <div class="headshot">
+
+                </div>
             </div>
 
             <section>
-                <h2 class="payoff">Design technologist, minimalist in wording, design lover &amp; longboarder.</h2>
+                <h2 class="payoff">Design technologist, dierenvriend, natuurmens <span style="white-space: nowrap;line-height: 1.2;">&amp; minimalist.</span></h2>
             </section>
         </header>
         <main>
